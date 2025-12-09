@@ -5,6 +5,33 @@
   <title>Haochen Sun</title>
   <link rel="stylesheet" href="jemdoc.css">
 </head>
+<script>
+  const internshipNotice = 
+    "I am actively seeking a research internship in areas related to differential privacy, including secure computations for DP and DP foundation models. " +
+    "If you have any opportunities or suggestions, please feel free to reach out to me via email. Thank you!";
+  // The message you want to show
+  const githubNotice = 
+    "My GitHub account may occasionally be temporarily restricted, especially when I am actively running experiments. " +
+    "This is because my experimental pipelines automatically push code and logs to GitHub, which may sometimes be flagged as automated (bot-like) activity. " +
+    "This automation is intentionally designed to improve the reproducibility and transparency of the experimental results reported in my papers.";
+
+  // 1) Show popup when the page is opened
+  window.addEventListener("load", function () {
+    alert(internshipNotice);
+    alert(githubNotice);
+  });
+
+  // 2) Show popup when the GitHub link is clicked
+  document.addEventListener("DOMContentLoaded", function () {
+    var githubLink = document.getElementById("github-link");
+    if (githubLink) {
+      githubLink.addEventListener("click", function () {
+        alert(githubNotice);
+        // No preventDefault: user will still be taken to GitHub after the alert
+      });
+    }
+  });
+</script>
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tr valign="top">
@@ -76,7 +103,7 @@
       <li><a href="https://ca.linkedin.com/in/haochen-sun-3131201a0">LinkedIn</a></li>
       <li><a href="https://dblp.org/pid/238/3163-1.html">DBLP</a></li>
       <li><a href="https://scholar.google.com/citations?user=Kwlbf1kAAAAJ">Google Scholar</a></li>
-      <li><a href="https://github.com/jvhs0706">GitHub</a></li>
+      <li><a href="https://github.com/jvhs0706" id="github-link">GitHub</a></li>
       <li><a href="https://orcid.org/0000-0002-4147-0346">ORCID</a></li>
     </ul>
   </div>
