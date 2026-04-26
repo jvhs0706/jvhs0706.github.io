@@ -1,4 +1,4 @@
-.PHONY: all publish schedule cv-submodule-add cv-submodule-init cv-submodule-update cv-build cv-sync cv-clean
+.PHONY: all publish schedule cv-submodule-add cv-submodule-init cv-submodule-update cv-build cv-sync cv-clean cv-publish publish-with-cv
 
 CV_SUBMODULE_URL ?= https://git@git.overleaf.com/65cdb29a6fbe79e16de89b3f
 CV_SUBMODULE_PATH ?= cv
@@ -12,16 +12,6 @@ all: publish schedule
 publish:
 	chmod -R a+r ./
 	echo "Updated at $(shell date +%Y-%m-%d,\ %H:%M:%S), from $$(hostname)" >> update.log
-	@# If the CV submodule has local changes, commit and push them first.
-	@if [ -e "$(CV_SUBMODULE_PATH)/.git" ]; then \
-		git -C "$(CV_SUBMODULE_PATH)" add -A; \
-		if git -C "$(CV_SUBMODULE_PATH)" diff --cached --quiet; then \
-			echo "No submodule changes to commit in $(CV_SUBMODULE_PATH)."; \
-		else \
-			git -C "$(CV_SUBMODULE_PATH)" commit -m "Update CV content at $(shell date +%Y-%m-%d,\ %H:%M:%S), from $$(hostname)"; \
-			git -C "$(CV_SUBMODULE_PATH)" push; \
-		fi; \
-	fi
 	git add -A
 	@if git diff --cached --quiet; then \
 		echo "No changes to commit."; \
@@ -51,3 +41,18 @@ cv-sync: cv-build
 
 cv-clean:
 	rm -f "$(CV_SUBMODULE_PATH)"/*.aux "$(CV_SUBMODULE_PATH)"/*.log "$(CV_SUBMODULE_PATH)"/*.out "$(CV_SUBMODULE_PATH)"/*.toc "$(CV_SUBMODULE_PATH)"/*.pdf
+
+cv-publish:
+	@if [ ! -e "$(CV_SUBMODULE_PATH)/.git" ]; then \
+		echo "Submodule $(CV_SUBMODULE_PATH) is not initialized. Run: make cv-submodule-init"; \
+		exit 1; \
+	fi
+	git -C "$(CV_SUBMODULE_PATH)" add -A
+	@if git -C "$(CV_SUBMODULE_PATH)" diff --cached --quiet; then \
+		echo "No submodule changes to commit in $(CV_SUBMODULE_PATH)."; \
+	else \
+		git -C "$(CV_SUBMODULE_PATH)" commit -m "Update CV content at $(shell date +%Y-%m-%d,\ %H:%M:%S), from $$(hostname)"; \
+		git -C "$(CV_SUBMODULE_PATH)" push; \
+	fi
+
+publish-with-cv: cv-publish publish
