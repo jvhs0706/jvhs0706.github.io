@@ -12,6 +12,16 @@ all: publish schedule
 publish:
 	chmod -R a+r ./
 	echo "Updated at $(shell date +%Y-%m-%d,\ %H:%M:%S), from $$(hostname)" >> update.log
+	@# If the CV submodule has local changes, commit and push them first.
+	@if [ -e "$(CV_SUBMODULE_PATH)/.git" ]; then \
+		git -C "$(CV_SUBMODULE_PATH)" add -A; \
+		if git -C "$(CV_SUBMODULE_PATH)" diff --cached --quiet; then \
+			echo "No submodule changes to commit in $(CV_SUBMODULE_PATH)."; \
+		else \
+			git -C "$(CV_SUBMODULE_PATH)" commit -m "Update CV content at $(shell date +%Y-%m-%d,\ %H:%M:%S), from $$(hostname)"; \
+			git -C "$(CV_SUBMODULE_PATH)" push; \
+		fi; \
+	fi
 	git add -A
 	@if git diff --cached --quiet; then \
 		echo "No changes to commit."; \
