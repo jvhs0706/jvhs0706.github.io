@@ -16,23 +16,6 @@
     "This automation is intentionally designed to improve the reproducibility and transparency of the experimental results reported in my papers.";
   const anonRepositoryNotice = 
     "This repository is not yet available due to double-anonymity requirements. If interested, please email me to request access.";
-
-  // 1) Show popup when the page is opened
-  window.addEventListener("load", function () {
-    alert(internshipNotice);
-    alert(githubNotice);
-  });
-
-  // 2) Show popup when the GitHub link is clicked
-  document.addEventListener("DOMContentLoaded", function () {
-    var githubLink = document.getElementById("github-link");
-    if (githubLink) {
-      githubLink.addEventListener("click", function () {
-        alert(githubNotice);
-        // No preventDefault: user will still be taken to GitHub after the alert
-      });
-    }
-  });
 </script>
 <body>
 <table summary="Table for page layout." id="tlayout">
