@@ -1,0 +1,167 @@
+%-------------------------
+% CV in LaTeX (Jake template based)
+%-------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{6pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlist[itemize]{leftmargin=0.15in, topsep=2pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{leftmargin=0.15in, topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-1pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\newcommand{\cofa}{\textsuperscript{*}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Haochen Sun} \\ \vspace{1pt}
+    \small \href{mailto:haochen.sun@uwaterloo.ca}{\underline{haochen.sun@uwaterloo.ca}} $|$
+    \href{https://jvhs0706.github.io}{\underline{jvhs0706.github.io}} $|$
+    \href{https://scholar.google.com/citations?user=Kwlbf1kAAAAJ}{\underline{Google Scholar}} $|$
+  \href{https://ca.linkedin.com/in/haochen-sun-3131201a0}{\underline{LinkedIn}} \\ \vspace{1pt}
+  \small University of Waterloo, 200 University Avenue West, Waterloo, Ontario, N2L 3G1, Canada
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Sep 2022 -- Present}
+      {PhD in Computer Science}{Waterloo, Canada}
+      \resumeItemListStart
+        \resumeItem{Supervisor: Prof. Xi He}
+        \resumeItem{Research Focus: Security and privacy in machine learning and data management}
+        \resumeItem{Honors and Awards: David R. Cheriton Graduate Scholarship}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {The Hong Kong University of Science and Technology (HKUST)}{Sep 2018 -- Jul 2022}
+      {BSc in Data Science and Technology, and in Computer Science}{Hong Kong, China}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.888/4.3 | Major GPA: 4.041/4.3}
+        \resumeItem{Honors and Awards: Chern Class Scholarship (Department of Mathematics), Zhiyuan Scholarship (China Soong Ching Ling Foundation), HKUST Scholarship Scheme for Continuing Undergraduates, Dean's List}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Faithfulness of Differential Privacy Mechanism Execution}{May 2024 -- Present}
+      {PhD Research Project (with Prof. Xi He)}{University of Waterloo}
+      \resumeItemListStart
+        \resumeItem{Investigating vulnerabilities from unfaithful execution of differential privacy mechanisms, focusing on additional privacy leakage incurred, and defenses to ensure execution integrity.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Zero-Knowledge Deep Learning}{Sep 2022 -- Apr 2024}
+      {with Prof. Hongyang Zhang}{University of Waterloo}
+      \resumeItemListStart
+        \resumeItem{Specialized zero-knowledge proof (ZKP) protocols for deep learning with CUDA implementations.}
+        \resumeItem{The first working ZKP scheme for 13B-parameter LLMs and for training 10M-parameter neural networks.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Air Pollution Forecasting with Deep Learning}{Jan 2020 -- Nov 2022}
+      {Undergraduate Research and RA (with Profs. Jimmy Fung and Xingcheng Lu)}{HKUST}
+      \resumeItemListStart
+        \resumeItem{Designed deep learning architectures for modeling the spatio-temporal distribution of air pollutants.}
+        \resumeItem{Improved regional air pollution forecasting accuracy by 30\%.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+\begin{enumerate}
+  \small
+  \item \textbf{(SIGMOD 2026 Best Paper Award)} \underline{Haochen Sun} and Xi He. ``GPM: The Gaussian Pancake Mechanism for Planting Undetectable Backdoors in Differential Privacy.'' \textit{Proceedings of the ACM on Management of Data (PACMMOD)}, 2026.
+  \item \underline{Haochen Sun} and Xi He. ``VDDP: Verifiable Distributed Differential Privacy under the Client--Server--Verifier Setup.'' \textit{Theory and Practice of Differential Privacy (TPDP)}, 2026.
+  \item \underline{Haochen Sun}\cofa, Shufan Zhang\cofa, Karl Knopf\cofa, Shubhankar Mohapatra, Wei Pang, Calvin Wang, Yingke Wang, Masoumeh Shafieinejad, David Emerson, and Xi He. ``FedDPSyn: Federated Tabular Data Synthesis with Computational Differential Privacy.'' \textit{Theory and Practice of Differential Privacy (TPDP)}, 2025.
+  \item \underline{Haochen Sun}, Jason Li, and Hongyang Zhang. ``zkLLM: Zero-Knowledge Proofs for Large Language Models.'' \textit{ACM Conference on Computer and Communications Security (CCS)}, 2024.
+  \item \underline{Haochen Sun}, Tonghe Bai, Jason Li, and Hongyang Zhang. ``zkDL: Efficient Zero-Knowledge Proofs of Deep Learning Training.'' \textit{IEEE Transactions on Information Forensics and Security (TIFS)}, 2024.
+  \item \underline{Haochen Sun}, Jimmy C. H. Fung, Yiang Chen, Zhenning Li, Dehao Yuan, Wanying Chen, and Xingcheng Lu. ``Development of an LSTM broadcasting deep-learning framework for regional air pollution forecast improvement.'' \textit{Geoscientific Model Development (GMD)}, 2022.
+  \item \underline{Haochen Sun}, Jimmy C. H. Fung, Yiang Chen, Wanying Chen, Zhenning Li, Yeqi Huang, Changqing Lin, Mingyun Hu, and Xingcheng Lu. ``Improvement of $\text{PM}_{2.5}$ and $\text{O}_{3}$ forecasting by integration of 3D numerical simulation with deep learning techniques.'' \textit{Sustainable Cities and Society (SCS)}, 2021.
+\end{enumerate}
+
+%-----------ACADEMIC SERVICES-----------
+\section{Academic Services}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{
+    \item \textbf{(Sub)Reviewer:} Conferences: CCS, SIGMOD, VLDB, NeurIPS, SaTML, AISTATS; Journals: TDSC, TMLR, TKDE.
+    \item \textbf{Teaching Assistant, University of Waterloo:} Courses: CS~116, CS~135, CS~246, CS~330, CS~480.
+  }
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

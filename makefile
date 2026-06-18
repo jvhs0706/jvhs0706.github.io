@@ -1,15 +1,14 @@
 .PHONY: all publish schedule cv-build cv-sync cv-clean
 
-CV_PATH ?= cv
-CV_MAIN_TEX ?= resume.tex
-CV_BUILD_PDF ?= resume.pdf
+CV_PATH ?= .
+CV_MAIN_TEX ?= cv.tex
+CV_BUILD_PDF ?= cv.pdf
 CV_SITE_PDF ?= haochen-sun-cv.pdf
 CV_LATEX ?= xelatex
 
 all: publish schedule
 
 publish: cv-sync
-	chmod -R a+r ./
 	echo "Updated at $(shell date +%Y-%m-%d,\ %H:%M:%S), from $$(hostname)" >> update.log
 	git add -A
 	@if git diff --cached --quiet; then \
@@ -30,8 +29,14 @@ cv-build:
 	cd "$(CV_PATH)" && "$(CV_LATEX)" -interaction=nonstopmode -halt-on-error "$(CV_MAIN_TEX)" && "$(CV_LATEX)" -interaction=nonstopmode -halt-on-error "$(CV_MAIN_TEX)"
 
 cv-sync: cv-build
-	cp "$(CV_PATH)/$(CV_BUILD_PDF)" "$(CV_SITE_PDF)"
+	mv "$(CV_PATH)/$(CV_BUILD_PDF)" "$(CV_SITE_PDF)"
+	chmod 644 "$(CV_SITE_PDF)"
+	chmod 600 "$(CV_PATH)/$(CV_MAIN_TEX)"
 	$(MAKE) cv-clean
 
 cv-clean:
-	rm -f "$(CV_PATH)"/*.aux "$(CV_PATH)"/*.log "$(CV_PATH)"/*.out "$(CV_PATH)"/*.toc "$(CV_PATH)"/*.pdf
+	rm -f "$(CV_PATH)/$(basename $(CV_MAIN_TEX)).aux" \
+	      "$(CV_PATH)/$(basename $(CV_MAIN_TEX)).log" \
+	      "$(CV_PATH)/$(basename $(CV_MAIN_TEX)).out" \
+	      "$(CV_PATH)/$(basename $(CV_MAIN_TEX)).toc" \
+	      "$(CV_PATH)/$(basename $(CV_MAIN_TEX)).synctex.gz"
