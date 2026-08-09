@@ -71,8 +71,10 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, topsep=2pt, itemsep=1pt, parsep=0pt, partopsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeEnumListStart}{\begin{enumerate}[leftmargin=0.15in, topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeEnumListEnd}{\end{enumerate}}
 
 \newcommand{\cofa}{\textsuperscript{*}}
 
@@ -145,7 +147,7 @@
 %-----------PUBLICATIONS-----------
 \section{Publications}
 \textit{\small Only (co-)first-author publications are listed below.}
-\begin{enumerate}[leftmargin=0.15in, itemsep=2pt]
+\resumeEnumListStart
   \item \label{pub:gpm} \textbf{(SIGMOD 2026 Best Paper Award)} \underline{Haochen Sun} and Xi He. ``GPM: The Gaussian Pancake Mechanism for Planting Undetectable Backdoors in Differential Privacy.'' \textit{Proceedings of the ACM on Management of Data (PACMMOD)}, 2026.
   \item \underline{Haochen Sun} and Xi He. ``VDDP: Verifiable Distributed Differential Privacy under the Client--Server--Verifier Setup.'' \textit{Theory and Practice of Differential Privacy (TPDP)}, 2026.
   \item Shufan Zhang\cofa, \underline{Haochen Sun}\cofa, Karl Knopf\cofa, Shubhankar Mohapatra, Wei Pang, Calvin Wang, Yingke Wang, Masoumeh Shafieinejad, David Emerson, and Xi He. ``FedDPSyn: Federated Tabular Data Synthesis with Computational Differential Privacy.'' \textit{Theory and Practice of Differential Privacy (TPDP)}, 2025.
@@ -153,16 +155,14 @@
   \item \underline{Haochen Sun}, Tonghe Bai, Jason Li, and Hongyang Zhang. ``zkDL: Efficient Zero-Knowledge Proofs of Deep Learning Training.'' \textit{IEEE Transactions on Information Forensics and Security (TIFS)}, 2024.
   \item \underline{Haochen Sun}, Jimmy C. H. Fung, Yiang Chen, Zhenning Li, Dehao Yuan, Wanying Chen, and Xingcheng Lu. ``Development of an LSTM broadcasting deep-learning framework for regional air pollution forecast improvement.'' \textit{Geoscientific Model Development (GMD)}, 2022.
   \item \underline{Haochen Sun}, Jimmy C. H. Fung, Yiang Chen, Wanying Chen, Zhenning Li, Yeqi Huang, Changqing Lin, Mingyun Hu, and Xingcheng Lu. ``Improvement of $\text{PM}_{2.5}$ and $\text{O}_{3}$ forecasting by integration of 3D numerical simulation with deep learning techniques.'' \textit{Sustainable Cities and Society (SCS)}, 2021.
-\end{enumerate}
+\resumeEnumListEnd
 
 %-----------ACADEMIC SERVICES-----------
 \section{Academic Services}
-\begin{itemize}[leftmargin=0.15in]
-  \small{
-    \item \textbf{(Sub)Reviewer:} Conferences: CCS, SIGMOD, VLDB, NeurIPS, SaTML, AISTATS; Journals: TDSC, TMLR, TKDE.
-    \item \textbf{Teaching Assistant, University of Waterloo:} Courses: CS~116, CS~135, CS~246, CS~330, CS~480.
-  }
-\end{itemize}
+\resumeItemListStart
+  \resumeItem{\textbf{(Sub)Reviewer:} Conferences: CCS, SIGMOD, VLDB, NeurIPS, SaTML, AISTATS; Journals: TDSC, TMLR, TKDE.}
+  \resumeItem{\textbf{Teaching Assistant, University of Waterloo:} Courses: CS~116, CS~135, CS~246, CS~330, CS~480.}
+\resumeItemListEnd
 
 %-------------------------------------------
 \end{document}
