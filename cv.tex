@@ -8,11 +8,11 @@
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage{amsmath}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true,linkcolor=teal!70!black,urlcolor=blue!70!black,citecolor=violet!70!black]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -101,8 +101,8 @@
       {PhD in Computer Science}{Waterloo, Canada}
       \resumeItemListStart
         \resumeItem{Supervisor: Prof. Xi He}
-        \resumeItem{Research focus: data privacy and machine learning security.}
-        \resumeItem{Honors and awards: \textbf{SIGMOD 2026 Best Paper Award} for \hyperref[pub:gpm]{GPM}; David R. Cheriton Graduate Scholarship.}
+        \resumeItem{Research interests: data privacy and machine learning security.}
+        \resumeItem{Honors and awards: \hyperref[pub:gpm]{\textbf{SIGMOD 2026 Best Paper Award}}; David R. Cheriton Graduate Scholarship.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -122,15 +122,16 @@
       {Faithfulness of Differential Privacy Mechanism Execution}{May 2024 -- Present}
       {PhD Research Project (with Prof. Xi He)}{University of Waterloo}
       \resumeItemListStart
-        \resumeItem{Investigating vulnerabilities from unfaithful execution of differential privacy mechanisms, focusing on additional privacy leakage incurred and defenses to ensure execution integrity.}
-        \resumeItem{Our \hyperref[pub:gpm]{GPM} work received the \textbf{SIGMOD 2026 Best Paper Award}.}
+        \resumeItem{Discovered an undetectable backdoor attack against DP mechanisms that can arbitrarily compromise the privacy guarantee.}
+        \resumeItem{Developed defenses against such malicious deviations in a distributed DP setting.}
+        \resumeItem{Awarded the \hyperref[pub:gpm]{\textbf{SIGMOD 2026 Best Paper Award}}.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Zero-Knowledge Deep Learning}{Sep 2022 -- Apr 2024}
       {~}{University of Waterloo}
       \resumeItemListStart
-        \resumeItem{Specialized zero-knowledge proof (ZKP) protocols for deep learning with CUDA implementations.}
+        \resumeItem{Developed specialized zero-knowledge proof (ZKP) protocols for deep learning, implemented with CUDA.}
         \resumeItem{The first working ZKP scheme for 13B-parameter LLMs and for training 10M-parameter neural networks.}
       \resumeItemListEnd
 
@@ -138,7 +139,7 @@
       {Air Pollution Forecasting with Deep Learning}{Jan 2020 -- Nov 2022}
       {Undergraduate Research and RA (with Profs. Jimmy Fung and Xingcheng Lu)}{HKUST}
       \resumeItemListStart
-        \resumeItem{Designed deep learning architectures for modeling the spatio-temporal distribution of air pollutants.}
+        \resumeItem{Designed deep learning architectures to model the spatiotemporal distribution of air pollutants.}
         \resumeItem{Improved regional air pollution forecasting accuracy by 30\%.}
       \resumeItemListEnd
 
